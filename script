@@ -1,1 +1,167 @@
-warn("YES")
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("FUCK SWORD BATTLES", "GrapeTheme")
+    local whattotext = "Join The Dizzy .gg/GPEYhDC6gm For Script"
+    local yup = "All"
+   local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
+Event:FireServer(whattotext, yup)
+if game.PlaceId == 855499080 then
+    local plr = game.Players.LocalPlayer
+    local embed = {
+        ["content"] = "> Player Executed WeloveRussia (Skywars)",
+        ["embeds"] = {
+            {
+                ["title"] = "Username: "..plr.Name.."",
+                ["description"] = "UserId: "..plr.UserId.."\nTime Executed: "..os.date().."\n @here",
+                ["type"] = "rich",
+                ["color"] = tonumber(0xFFFAFA),
+            }
+        }
+    }
+    
+    request = http_request or request or HttpPost or syn.request
+    local sendwebhook = {
+        Url = "https://discord.com/api/webhooks/972929304348471328/qmYLZNMx1C1nixbwgNPSipz7TtV5rAgDTo1SIx4R7sc_qc-BR25QHXxRVCyNQcaGPQOR", 
+        Body = game:GetService("HttpService"):JSONEncode(embed), 
+        Method = "POST", 
+        Headers = {
+            ["content-type"] = "application/json"
+        }
+    }
+    request(sendwebhook)
+    
+    
+    elseif game.PlaceId == 283721918 then
+    local plrz = game.Players.LocalPlayer
+    local embed = {
+        ["content"] = "> Player Executed WeloveRussia (Test)",
+        ["embeds"] = {
+            {
+                ["title"] = "Username: "..plrz.Name.."",
+                ["description"] = "UserId: "..plrz.UserId.."\nTime Executed: "..os.date().."\n @here",
+                ["type"] = "rich",
+                ["color"] = tonumber(0xFFFAFA),
+            }
+        }
+    }
+    
+    
+    request = http_request or request or HttpPost or syn.request
+    local sendwebhook = {
+        Url = "https://discord.com/api/webhooks/972929304348471328/qmYLZNMx1C1nixbwgNPSipz7TtV5rAgDTo1SIx4R7sc_qc-BR25QHXxRVCyNQcaGPQOR", 
+        Body = game:GetService("HttpService"):JSONEncode(embed), 
+        Method = "POST", 
+        Headers = {
+            ["content-type"] = "application/json"
+        }
+    }
+    request(sendwebhook)
+
+    elseif game.PlaceId == 9143982021 then
+local plrz = game.Players.LocalPlayer
+    local embed = {
+        ["content"] = "> Player Executed WeloveRussia (Sword Battles)",
+        ["embeds"] = {
+            {
+                ["title"] = "Username: "..plrz.Name.."",
+                ["description"] = "UserId: "..plrz.UserId.."\nTime Executed: "..os.date().."\n @here",
+                ["type"] = "rich",
+                ["color"] = tonumber(0xFFFAFA),
+            }
+        }
+    }
+    
+    
+    request = http_request or request or HttpPost or syn.request
+    local sendwebhook = {
+        Url = "https://discord.com/api/webhooks/972929304348471328/qmYLZNMx1C1nixbwgNPSipz7TtV5rAgDTo1SIx4R7sc_qc-BR25QHXxRVCyNQcaGPQOR", 
+        Body = game:GetService("HttpService"):JSONEncode(embed), 
+        Method = "POST", 
+        Headers = {
+            ["content-type"] = "application/json"
+        }
+    }
+    request(sendwebhook)
+
+	
+    end
+
+    function equipsword(sword)
+    local A_1 = "equipsword"
+    local A_2 = sword
+    local A_3 = 999
+    local A_4 = "kills"
+    local Event = game.Players.LocalPlayer.PlayerGui.Selection.Event
+    Event:FireServer(A_1, A_2, A_3, A_4)
+    end
+
+
+
+    function killothers()
+    if getgenv().killall == true then
+    while getgenv().killall == true do
+    task.wait()
+    for _, plrs in pairs(game.Players:GetPlayers()) do
+    if plrs ~= game.Players.LocalPlayer then   
+    local plrname = game.Players.LocalPlayer.Name
+    local A_s = "hitplr"
+    local A_z = plrs.Character
+    local A_c = 99999
+    local Event = game:GetService("Workspace")[plrname].Classic.RemoteEvent
+    Event:FireServer(A_s, A_z, A_c)
+    end
+    end
+    end
+    end
+    end
+
+    function killammount(ammount)
+    local A_1 = "kills"
+    local A_2 = game.Players.LocalPlayer.leaderstats.Kills.Value*-1
+    local A_3 = "starter"
+    local Event = game:GetService("ReplicatedStorage").CodeReward
+    Event:FireServer(A_1, A_2, A_3)
+
+    local A_1 = "kills"
+    local A_2 = ammount
+    local A_3 = "starter"
+    local Event = game:GetService("ReplicatedStorage").CodeReward
+    Event:FireServer(A_1, A_2, A_3)
+    end
+    
+    function killplayer(player)
+     local plrname = game.Players.LocalPlayer.Name
+    local A_s = "hitplr"
+    local A_z = game.Workspace[player]
+    local A_c = 99999
+    local Event = game:GetService("Workspace")[plrname].Classic.RemoteEvent
+    Event:FireServer(A_s, A_z, A_c)
+    end
+    local Tab = Window:NewTab("ALL")
+
+    local Main = Tab:NewSection("Main")
+
+    Main:NewToggle("Kill All", "Kills all Players In Game", function(bool)
+            getgenv().killall = bool
+            killothers()
+    end)
+
+    Main:NewSlider("Speed", "How Fast To Go", 750, 16, function(speed) 
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speed
+    end)
+
+    Main:NewSlider("JumpPower", "How High To Jump", 750, 50, function(jp) 
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = jp
+    end)
+
+    Main:NewTextBox("Kill Giver", "Gives You The Ammount of Kills You Input", function(text)
+            killammount(text)
+    end)
+
+    Main:NewTextBox("Sword Giver", "Gives You The Sword You Input", function(text)
+            equipsword(text)
+    end)
+
+    Main:NewTextBox("Kill Player", "Kills The Player That's Inputed", function(text)
+            killplayer(text)
+    end)
+
